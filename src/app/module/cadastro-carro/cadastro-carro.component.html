@@ -1,0 +1,101 @@
+<app-navbar></app-navbar>
+
+<div
+  class="d-flex flex-column justify-content-center align-items-center background__page"
+>
+  <div *ngIf="carSubmit" class="alert alert-success" role="alert">
+    Carro salvo com sucesso!
+  </div>
+  <div class="d-flex flex-column align-items-center form_table">
+    <h1>CADASTRO DE CARROS</h1>
+    <div class="mt-4">
+      <form [formGroup]="carroForm" (ngSubmit)="cadastrarCarro()">
+        <div class="container text-start">
+          <div class="row">
+            <div class="col-6">
+              <div class="p-2">
+                <label for="placa" class="form-label">Placa</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="placa"
+                  placeholder="Placa"
+                  formControlName="placa"
+                  maxlength="7"
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-2">
+                <label for="chassi" class="form-label">Chassi</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="chassi"
+                  placeholder="Chassi"
+                  formControlName="chassi"
+                  maxlength="17"
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-2">
+                <label for="renavam" class="form-label">Renavam</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="renavam"
+                  placeholder="Renavam"
+                  formControlName="renavam"
+                  maxlength="11"
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-2">
+                <label for="modelo" class="form-label">Modelo</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="modelo"
+                  placeholder="Modelo"
+                  formControlName="modelo"
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-2">
+                <label for="marca" class="form-label">Marca</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="marca"
+                  placeholder="Marca"
+                  formControlName="marca"
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-2">
+                <label for="ano" class="form-label">Ano</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="ano"
+                  placeholder="Ano"
+                  formControlName="ano"
+                  maxlength="4"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <div class="container d-flex w-100 p-2 justify-content-center">
+        <button type="submit" class="btn btn-success mt-4">Salvar</button>
+      </div>
+      </form>
+
+    </div>
+  </div>
+</div>

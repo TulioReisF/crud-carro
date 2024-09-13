@@ -1,0 +1,63 @@
+<div
+  class="container-fluid d-flex flex-column justify-content-start p-1 vh-100 background__page"
+>
+  <div class="d-flex justify-content-center">
+    <div class="image-container">
+      <img src="../../../assets/logo.jpg" class="img img-fluid" alt=""  style="border-radius: 50%;"/>
+    </div>
+  </div>
+
+  <h4 class="text-center">BEM VINDOS!!</h4>
+
+  <div class="d-flex justify-content-center text-center">
+    <div id="carouselIndicators" class="carousel slide w-100" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselIndicators"
+          *ngFor="let item of items; let i = index"
+          [attr.data-bs-slide-to]="i"
+          [class.active]="currentCard === i"
+          [attr.aria-label]="'Slide ' + (i + 1)"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div
+          class="carousel-item"
+          *ngFor="let item of items; let i = index"
+          [ngClass]="{ active: currentCard === i }"
+        >
+          <p>
+            <strong>{{ item.title }}:</strong> {{ item.description }}
+          </p>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselIndicators"
+        data-bs-slide="prev"
+        [disabled]="currentCard === 0"
+        (click)="prevCard()"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselIndicators"
+        data-bs-slide="next"
+        [disabled]="currentCard === items.length - 1"
+        (click)="nextCard()"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+  <button type="button" class="btn btn-success" (click)="navigateToCadastro()">CADASTRE SEU VEICULO</button>
+  </div>
+</div>

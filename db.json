@@ -1,0 +1,34 @@
+{
+  "carros": [
+    {
+      "id": "1",
+      "placa": "TORO1321",
+      "chassi": "9BWZZZ377VT004251",
+      "renavam": "12345678901",
+      "modelo": "Toro",
+      "marca": "Fiat",
+      "ano": "2021",
+      "editando": false
+    },
+    {
+      "id": "2",
+      "placa": "XYZ5678",
+      "chassi": "8APXZZZ400JT006785",
+      "renavam": "45234534543",
+      "modelo": "Lancer",
+      "marca": "Mitsubishi",
+      "ano": 2017,
+      "editando": false
+    },
+    {
+      "id": "6a31",
+      "placa": "XIZD4732",
+      "chassi": "4BEXCCZ400JT006723",
+      "renavam": "18765432101",
+      "modelo": "Camaro",
+      "marca": "Chevrolet",
+      "ano": "2022",
+      "editando": false
+    }
+  ]
+}

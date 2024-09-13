@@ -1,0 +1,150 @@
+<app-navbar></app-navbar>
+
+<div
+  class="d-flex flex-column justify-content-start align-items-center background__page"
+>
+  <div *ngIf="success" class="alert alert-success" role="alert">
+    Carro atualizado com sucesso!
+  </div>
+  <div *ngIf="delete" class="alert alert-danger" role="alert">
+    Carro deletado com sucesso!
+  </div>
+
+  <h1>Tabela de Carros</h1>
+
+  <div class="d-flex flex-column justify-content-center p-2 w-100">
+    <div class="card d-flex" style="width: 100% !important">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Placa</th>
+                <th scope="col">Chassi</th>
+                <th scope="col">Cod. Renavam</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Ano</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let carro of carros; let i = index">
+                <ng-container *ngIf="!carro.editando; else editMode">
+                  <td>{{ carro.placa }}</td>
+                  <td>{{ carro.chassi }}</td>
+                  <td>{{ carro.renavam }}</td>
+                  <td>{{ carro.modelo }}</td>
+                  <td>{{ carro.marca }}</td>
+                  <td>{{ carro.ano }}</td>
+                  <td class="d-flex gap-2" style="padding: 1.07rem !important">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-sm"
+                      (click)="editarCarro(carro)"
+                    >
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger btn-sm"
+                      (click)="apagarCarro(carro)"
+                    >
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <ng-template #editMode>
+                  <td>
+                    <div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="placa"
+                        [(ngModel)]="carro.placa"
+                        maxlength="7"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="chassi"
+                        [(ngModel)]="carro.chassi"
+                        maxlength="17"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="renavam"
+                        [(ngModel)]="carro.renavam"
+                        maxlength="11"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="modelo"
+                        [(ngModel)]="carro.modelo"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="marca"
+                        [(ngModel)]="carro.marca"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="ano"
+                        [(ngModel)]="carro.ano"
+                        maxlength="4"
+                      />
+                    </div>
+                  </td>
+
+                  <td
+                    class="d-flex gap-2 p-2"
+                    style="padding: 1.05rem !important"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-success btn-sm"
+                      (click)="salvarEdicao(carro)"
+                    >
+                      Salvar
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-secondary btn-sm"
+                      (click)="cancelarEdicao(i)"
+                    >
+                      Cancelar
+                    </button>
+                  </td>
+                </ng-template>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

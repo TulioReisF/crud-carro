@@ -1,0 +1,29 @@
+:host {
+  ::ng-deep {
+    .border-bottom {
+      padding: 0 1rem;
+    }
+
+    .img {
+      margin-right: 0;
+      border-radius: 50%;
+    }
+
+    .navbar-brand {
+      margin-right: 0;
+    }
+
+    .nav-link {
+      padding: 0.5rem 1rem;
+      font-size: 26px;
+      display: flex;
+      justify-content: end;
+    }
+
+    @media (min-width: 992px) {
+      .navbar-expand-lg .navbar-collapse {
+        margin-right: 15rem;
+      }
+    }
+  }
+}
